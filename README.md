@@ -5,9 +5,11 @@ You can view them at our [Storybook](https://philipp08888.github.io/ui-component
 
 ## Component Folder Structure
 
-- Component
-  - Component.tsx
-  - Component.module.scss
-  - Component.test.ts
-  - Component.stories.tsx
-  - Component.md
+Example:
+
+- components/Button
+  - Button.tsx
+  - Button.module.scss
+  - Button.test.ts
+  - Button.stories.tsx
+  - Button.md
