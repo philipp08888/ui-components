@@ -1,42 +1,106 @@
-.container {
-  .button {
-    display: flex;
-    gap: 0.15rem;
-    border: none;
-    color: var(--text-color);
-    padding: 12px 22px;
-    border-radius: 0.5rem;
-    cursor: pointer;
+/** not final styling, just for testing purpose */
+$button-padding-y: 0.75em;
+$button-padding-x: 1.5em;
+$button-border-radius: 6px;
+$button-font-size: 1em;
+$button-line-height: 1.5;
+$button-transition-duration: 0.3s;
+
+$button-primary-color: #007bff;
+$button-primary-color-hover: #0056b3;
+
+$button-success-color: #28a745;
+$button-success-color-hover: #218838;
+
+$button-danger-color: #dc3545;
+$button-danger-color-hover: #c82333;
+
+$button-warning-color: #ffc107;
+$button-warning-color-hover: #e0a800;
+
+$button-icon-size: 1.2em;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $button-padding-y $button-padding-x;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  border: none;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  transition: background-color $button-transition-duration ease;
+
+  &.primary {
+    background-color: $button-primary-color;
+    color: #fff;
 
     &:hover {
-      opacity: 0.8;
-      transition: background-color 0.5s ease;
-    }
-
-    &:active {
-      opacity: 1;
-      transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    &:focus {
-      outline: none;
+      background-color: $button-primary-color-hover;
     }
   }
 
-  .primary {
-    background-color: var(--primary-color);
+  &.success {
+    background-color: $button-success-color;
+    color: #fff;
+
+    &:hover {
+      background-color: $button-success-color-hover;
+    }
   }
 
-  .danger {
-    background-color: var(--danger-color);
+  &.danger {
+    background-color: $button-danger-color;
+    color: #fff;
+
+    &:hover {
+      background-color: $button-danger-color-hover;
+    }
   }
 
-  .success {
-    background-color: var(--success-color);
+  &.warning {
+    background-color: $button-warning-color;
+    color: #fff;
+
+    &:hover {
+      background-color: $button-warning-color-hover;
+    }
   }
 
-  .warning {
-    background-color: var(--warning-color);
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.icon-left {
+    padding-left: calc($button-padding-x + $button-icon-size);
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: $button-icon-size;
+    }
+  }
+
+  &.icon-right {
+    padding-right: calc($button-padding-x + $button-icon-size);
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: $button-icon-size;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
   }
 }

@@ -23,12 +23,17 @@ $success-color: #5cb85c;
     --secondary-color: #{$secondary-color-light};
     --background-color: #{$background-color-light};
     --text-color: #{$text-color-light};
-  } @else if $theme == dark {
+  }
+
+ @else if $theme == dark {
     --secondary-color: #{$secondary-color-dark};
     --background-color: #{$background-color-dark};
     --text-color: #{$text-color-dark};
-  } @else {
+  }
+
+ @else {
     @warn "Unknown theme #{$theme}. Using dark theme by default.";
+
     --secondary-color: #{$secondary-color-dark};
     --background-color: #{$background-color-dark};
     --text-color: #{$text-color-dark};
