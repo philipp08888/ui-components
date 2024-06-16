@@ -1,13 +1,26 @@
-import { useTheme } from "../../theme/hooks/useTheme";
+import _ from "classnames";
+import React from "react";
 import styles from "./Button.module.scss";
 
-/** This is just a btn for testing purpose */
-export const Button = (): JSX.Element => {
-  const { toggleTheme } = useTheme();
+export interface ExtendedButtonProps {
+  variant?: "primary" | "success" | "danger" | "warning";
+}
 
+export type ButtonProps = ExtendedButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export const Button = ({
+  variant = "primary",
+  ...props
+}: ButtonProps): JSX.Element => {
   return (
-    <button className={styles.button} onClick={toggleTheme}>
-      Change theme
-    </button>
+    <div className={styles.container}>
+      <button
+        className={_(styles.button, styles[variant], props.className)}
+        {...props}
+      >
+        {props.children}
+      </button>
+    </div>
   );
 };

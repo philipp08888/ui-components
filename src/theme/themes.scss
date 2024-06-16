@@ -1,27 +1,34 @@
-$primary-color-light: #3498db;
+$primary-color-light: #004de5;
 $secondary-color-light: #2ecc71;
 $background-color-light: #ecf0f1;
-$text-color-light: #2c3e50;
+$text-color-light: #fff;
 
-$primary-color-dark: #1abc9c;
+$primary-color-dark: #004de5;
 $secondary-color-dark: #e74c3c;
 $background-color-dark: #2c3e50;
-$text-color-dark: #ecf0f1;
+$text-color-dark: #fff;
+
+$danger-color: #d63232;
+$warning-color: #e5b030;
+$primary-color: #0275d8;
+$success-color: #5cb85c;
 
 @mixin theme($theme) {
+  --primary-color: #{$primary-color};
+  --danger-color: #{$danger-color};
+  --success-color: #{$success-color};
+  --warning-color: #{$warning-color};
+
   @if $theme == light {
-    --primary-color: #{$primary-color-light};
     --secondary-color: #{$secondary-color-light};
     --background-color: #{$background-color-light};
     --text-color: #{$text-color-light};
   } @else if $theme == dark {
-    --primary-color: #{$primary-color-dark};
     --secondary-color: #{$secondary-color-dark};
     --background-color: #{$background-color-dark};
     --text-color: #{$text-color-dark};
   } @else {
     @warn "Unknown theme #{$theme}. Using dark theme by default.";
-    --primary-color: #{$primary-color-dark};
     --secondary-color: #{$secondary-color-dark};
     --background-color: #{$background-color-dark};
     --text-color: #{$text-color-dark};
