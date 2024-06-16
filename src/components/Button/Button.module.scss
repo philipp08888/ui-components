@@ -1,4 +1,42 @@
-.button {
-  background-color: var(--primary-color);
-  border: none;
+.container {
+  .button {
+    display: flex;
+    gap: 0.15rem;
+    border: none;
+    color: var(--text-color);
+    padding: 12px 22px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+      transition: background-color 0.5s ease;
+    }
+
+    &:active {
+      opacity: 1;
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .primary {
+    background-color: var(--primary-color);
+  }
+
+  .danger {
+    background-color: var(--danger-color);
+  }
+
+  .success {
+    background-color: var(--success-color);
+  }
+
+  .warning {
+    background-color: var(--warning-color);
+  }
 }
