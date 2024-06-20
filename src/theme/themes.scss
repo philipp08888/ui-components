@@ -8,10 +8,10 @@ $secondary-color-dark: #e74c3c;
 $background-color-dark: #2c3e50;
 $text-color-dark: #fff;
 
-$danger-color: #d63232;
-$warning-color: #e5b030;
-$primary-color: #0275d8;
-$success-color: #5cb85c;
+$danger-color: #ef4444;
+$warning-color: #eab308;
+$primary-color: #2563eb;
+$success-color: #22c55e;
 
 @mixin theme($theme) {
   --primary-color: #{$primary-color};
@@ -23,15 +23,11 @@ $success-color: #5cb85c;
     --secondary-color: #{$secondary-color-light};
     --background-color: #{$background-color-light};
     --text-color: #{$text-color-light};
-  }
-
- @else if $theme == dark {
+  } @else if $theme == dark {
     --secondary-color: #{$secondary-color-dark};
     --background-color: #{$background-color-dark};
     --text-color: #{$text-color-dark};
-  }
-
- @else {
+  } @else {
     @warn "Unknown theme #{$theme}. Using dark theme by default.";
 
     --secondary-color: #{$secondary-color-dark};

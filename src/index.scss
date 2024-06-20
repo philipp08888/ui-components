@@ -1,6 +1,8 @@
 @use "theme/themes.scss";
 
-@font-face {
-  font-family: "Geist";
-  src: url("./theme/font/Geist-Black.woff");
+/** TODO: Replace this through local fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  font-family: "inter", sans-serif;
 }
