@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import { default as classNames } from "classnames";
 import React from "react";
 import styles from "./Button.module.scss";
 
@@ -35,12 +35,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    const classes = classNames(
+      styles.button,
+      styles[variant],
+      styles[size],
+      {
+        [styles.outline]: outline,
+      },
+      className
+    );
+
     return (
-      <button
-        ref={ref}
-        className={classnames(styles.button, styles[variant], className)}
-        {...props}
-      >
+      <button ref={ref} className={classes} {...props}>
         {children}
       </button>
     );
