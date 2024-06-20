@@ -1,8 +1,8 @@
 /** not final styling, just for testing purpose */
-$button-padding-y: 0.75em;
-$button-padding-x: 1.5em;
+$button-padding-y: 0.5rem;
+$button-padding-x: 1.25rem;
 $button-border-radius: 6px;
-$button-font-size: 1em;
+$button-font-size: 0.875rem;
 $button-line-height: 1.5;
 $button-transition-duration: 0.3s;
 
@@ -101,6 +101,5 @@ $button-icon-size: 1.2em;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
   }
 }

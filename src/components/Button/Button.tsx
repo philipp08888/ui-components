@@ -8,13 +8,33 @@ export interface ExtendedButtonProps {
    * @default "primary"
    */
   variant?: "primary" | "success" | "danger" | "warning";
+  /**
+   * size of button
+   * @default "medium"
+   */
+  size?: "small" | "medium" | "large";
+  /**
+   * enable or disable outline
+   * @default "false"
+   */
+  outline?: boolean;
 }
 
 export type ButtonProps = ExtendedButtonProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "primary", children, className, ...props }, ref) => {
+  (
+    {
+      variant = "primary",
+      size = "medium",
+      outline = false,
+      children,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <button
         ref={ref}
